@@ -1,0 +1,21 @@
+// script.js
+const loveButton = document.getElementById("loveButton");
+const noLoveButton = document.getElementById("noLoveButton");
+const message = document.getElementById("message");
+
+// Event listener for the "I Love You" button
+loveButton.addEventListener("click", () => {
+  message.textContent = "I knew it! ❤️ I love you too!";
+});
+
+// Event listener for "I Don’t Love You" button to make it jump on hover
+noLoveButton.addEventListener("mouseover", () => {
+  // Generate random position within the viewport
+  const randomX = Math.floor(Math.random() * (window.innerWidth - noLoveButton.clientWidth));
+  const randomY = Math.floor(Math.random() * (window.innerHeight - noLoveButton.clientHeight));
+
+  // Move button to the new position
+  noLoveButton.style.position = "absolute";
+  noLoveButton.style.left = `${randomX}px`;
+  noLoveButton.style.top = `${randomY}px`;
+});
